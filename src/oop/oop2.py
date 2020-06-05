@@ -4,6 +4,7 @@
 # object is constructed.
 
 class GroundVehicle():
+    # setting num_wheels to num_wheels=4 will provide default argument to 4 if none is passed in.
     def __init__(self, num_wheels=4):
         self.num_wheels = num_wheels
 
@@ -19,10 +20,11 @@ class GroundVehicle():
 # Override the drive() method in Motorcycle so that it returns "BRAAAP!!"
 
 class Motorcycle(GroundVehicle):
-    def __init__(self):
+    def __init__(self):  # initialize class with __init__ constructor
+        # inherits GroundVehicle's methods, also overwriting num_wheels to default to 2
         super().__init__(num_wheels=2)
 
-    def drive(self):
+    def drive(self):  # defining the drive method here will overwrite the method for this class
         return f"BRAAAP!!"
 
 
